@@ -107,9 +107,4 @@ const styles = StyleSheet.create({
     alignItems: "center",
     width: 70,
   },
-
-  item: {
-  },
-
-
 });
