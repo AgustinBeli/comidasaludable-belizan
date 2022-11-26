@@ -2,9 +2,12 @@ import { useState } from 'react';
 import { FlatList, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
 import Header from './components/Header';
 import ModalList from './components/ModalList';
+import { useFonts } from 'expo-font';
 
 export default function App() {
-
+  const [loaded] = useFonts({
+    Montserrat: require('./assets/fonts/Montserrat-Italic-VariableFont_wght.ttf')
+  })
   const [textItem, setTextItem] = useState('')
   const [itemList, setItemList] = useState([])
   const [modalVisible, setModalVisible] = useState(false);
@@ -40,10 +43,14 @@ export default function App() {
     </View>
   );
 
+  if (!loaded) {
+    return null
+  }
+
   return (
 
     <View style={styles.container}>
-      <Header title={'Stock Almacenes'} />
+      <Header title={'Stock Almacenes'} newStyles={{ fontFamily: 'Montserrat' }} />
       <View style={styles.addItem}>
 
         <TextInput

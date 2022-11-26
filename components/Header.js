@@ -1,11 +1,11 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 
-const Header = ({ title }) => {
+const Header = ({ title, newStyles }) => {
     return (
         <View style={styles.header}>
-            <Text style={styles.title}>{title}</Text>
-        </View>
+            <Text style={{ ...styles.title, ...newStyles }}>{title}</Text>
+        </View >
     );
 };
 
