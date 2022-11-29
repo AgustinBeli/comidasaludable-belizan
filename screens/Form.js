@@ -68,6 +68,8 @@ const Form = () => {
     );
 }
 
+export default Form
+
 const styles = StyleSheet.create({
     container: {
         flex: 1,
