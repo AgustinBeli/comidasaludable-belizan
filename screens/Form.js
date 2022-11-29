@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { FlatList, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
-import Header from '../components/Header';
 import ModalList from '../components/ModalList';
 
 const Form = () => {
@@ -42,9 +41,7 @@ const Form = () => {
     return (
 
         <View style={styles.container}>
-            <Header title={'Stock Almacenes'} />
             <View style={styles.addItem}>
-
                 <TextInput
                     value={textItem}
                     style={styles.input}
