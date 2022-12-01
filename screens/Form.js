@@ -14,19 +14,14 @@ const Form = () => {
 
 
     const addItem = () => {
-        const newText = textItem;
-        newText.trim();
-
-        if (newText == "" || newText == " ") {
-            setItemList(currentItems => [
-                ...currentItems,
-                { id: Math.random().toString(), value: newText }
-            ]);
-
-        }
-        setTextItem();
+        const newText = textItem.trim();
+        if (newText === " " || newText === "") return;
+        setItemList((currentItems) => [
+            ...currentItems,
+            { id: Math.random().toString(), value: newText },
+        ]);
+        setTextItem("");
     };
-
 
     const selectedItem = (id) => {
         setItemSelected(itemList.find((item) => item.id === id));
