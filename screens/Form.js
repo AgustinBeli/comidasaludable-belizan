@@ -3,6 +3,7 @@ import { FlatList, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'r
 import ModalList from '../components/ModalList';
 
 const Form = () => {
+
     const [textItem, setTextItem] = useState('')
     const [itemList, setItemList] = useState([])
     const [modalVisible, setModalVisible] = useState(false);
@@ -10,13 +11,22 @@ const Form = () => {
 
     const onHandleChangeItem = (t) => setTextItem(t);
 
+
+
     const addItem = () => {
-        setItemList(currentItems => [
-            ...currentItems,
-            { id: Math.random().toString(), value: textItem }
-        ]);
-        setTextItem('');
+        const newText = textItem;
+        newText.trim();
+
+        if (newText == "" || newText == " ") {
+            setItemList(currentItems => [
+                ...currentItems,
+                { id: Math.random().toString(), value: newText }
+            ]);
+
+        }
+        setTextItem();
     };
+
 
     const selectedItem = (id) => {
         setItemSelected(itemList.find((item) => item.id === id));
